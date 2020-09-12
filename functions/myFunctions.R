@@ -135,4 +135,45 @@ doSummary = function(x)
 
 
 
+#**************************************************************************************
+# IMBD functions
+#**************************************************************************************
+# Function, return inflation dollars from year
+inflation_dollar_from_year = function(x, yrs)
+{
+  #return inflation dollar from a year
+  return (x[which(x$year == yrs),2])
+}
+
+
+# function to convert a vector of raw dollars to inflation dollar 
+# per year
+convert_inflation = function(x, base_year,inflation_vector)
+{
+  
+  #initialize inflation vector
+  inflation_vec  <- rep(0,length(x))
+  
+  #year = 2020 to adjust inflation to
+  inflation_basis <- inflation_dollar_from_year(inflation_vector, base_year)
+  
+  for(i in 1:nrow(x))
+  {
+    movie_year = x[i,"year"]
+    money_earned_year = x[i,"millions"]
+    
+    #get $$$ 
+    dollar_inf_year <- inflation_dollar_from_year(inflation_vector, movie_year)
+    
+    #adjust $$$
+    #money_adjusted = (dollar_inf_year/inflation_basis) * money_earned_year
+    money_adjusted = (inflation_basis/dollar_inf_year) * money_earned_year
+    
+    #put adjusted $$$ from inflation into vector
+    inflation_vec[i] = money_adjusted
+    
+  }
+  return(inflation_vec)
+}
+
 
