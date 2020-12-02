@@ -1,0 +1,364 @@
+---
+title: "week 03 Assignment"
+author: "Shawn Petersen"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  pdf_document:
+    citation_package: natbib
+    latex_engine: pdflatex
+    template: latex-templates/homework.tex
+    fig_caption: yes
+    number_sections: yes
+  html_document:
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_depth: 4
+    fig_caption: yes
+    number_sections: yes
+instructor: Monte J. Shaffer
+email: shawn.petersen@wsu.edu
+course: STATS 419 Survey of Multivariate Analysis
+---
+
+```{r setup, include=FALSE, echo = FALSE}
+
+#knitr::opts_chunk$set(fig.pos = "H", out.extra = "", results="hold", warning = F, echo = T)
+
+```
+
+
+```{r setup load libraries, results = FALSE}
+
+getwd()
+
+library(devtools)  # devtools is requireed for source_url to work
+my.source = 'github'
+my.github.path = "https://raw.githubusercontent.com/shawn-petersen/WSU_STATS419_FALL2020/"
+source( paste0(my.github.path,"master/libraries/libraries.R") );
+source( paste0(my.github.path,"master/functions/functions-imdb.R") );
+source( paste0(my.github.path,"master/functions/myFunctions.R") );
+
+#local.path = "D:/_git_/WSU_STATS419_FALL2020/";
+#source( paste0(local.path,"functions/myFunctions.R"), local=T );
+
+
+
+
+
+
+```
+
+
+```{r data wrangling libraries, include = FALSE, echo = FALSE, results = FALSE}
+# set default parameters for knitting (output)
+# "include = F" means this particular chunk will now show in output
+# but by default, the rest of the chunks will display
+list.of.packages <- c("tidyr", "dplyr", "knitr" , "purrr", "rmarkdown")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+require (dplyr)
+require (tidyr)
+require (purrr)
+require(rmarkdown)
+require(digest)
+```
+
+
+# Introduction
+For homework week #2 we are applying our "R" knowledge for matrix math, data wrangling personality data, creating functions for basic data analysis, looking at IMDB data from Will Smith & Denzel Washington and box plots the results of our movie analysis.
+
+
+\newpage
+# __Question 1__ 
+
+## Rotation Matrix
+  Create the "rotate matrix" functions as described in lectures.  Apply to the example "myMatrix"
+  
+  Answer: I created one function and the user is able to pass in the original matrix and a rotational value in degrees.  I support
+  90, 180, and 270 degreee rotations with this function
+
+
+```{r matrix rotation function}
+
+
+# Function to rotate a matrix based on user passed parameter on degrees
+transposeMatrix <- function(myMatrix,rotate_degrees)
+{
+   transformation_mat <- matrix (c ( 0,  0,  1,
+                                     0,  1,  0,
+                                     1,  0,  0), nrow=3, byrow=T);
+  
+  if (rotate_degrees == 90){
+    matrixrotate <- t(myMatrix %*% transformation_mat)
+  }else if (rotate_degrees == 180){
+    temprotate <- t(myMatrix %*% transformation_mat)
+    matrixrotate <- t(temprotate %*% transformation_mat)
+  } else if (rotate_degrees == 270){
+    temprotate <- t(myMatrix %*% transformation_mat)
+    temprotate <- t(temprotate %*% transformation_mat)
+    matrixrotate <- t(temprotate %*% transformation_mat)
+  }else {
+    print ("Invalid rotation passed. Returning original, unchanged matrix")
+    matrixrotate <- myMatrix
+  }
+  
+  return(matrixrotate)
+}
+```
+
+## Origina Matrix 
+```{r original matrix}
+
+original_matrix <-  matrix (c ( 1, 0, 2,
+                               0, 3, 0,
+                               4, 0, 5), nrow=3, byrow=T);
+
+
+
+original_matrix 
+```
+
+## **Rotate Matrix 90 Degrees**
+```{r matrix 90 rotation}
+
+rotateMatrix90 <- transposeMatrix(original_matrix,90)
+rotateMatrix90
+```
+
+## **Rotate Matrix 180 Degrees**
+```{r matrix 180 rotation}
+
+
+rotateMatrix180 <- transposeMatrix(original_matrix,180)
+rotateMatrix180
+```
+
+
+## **Rotate Matrix 270 Degrees**
+```{r matrix 270 rotation}
+rotateMatrix270 <- transposeMatrix(original_matrix,270)
+rotateMatrix270
+
+```
+
+
+
+
+\newpage
+# __Question 2__
+
+  Recreate the graphic for the IRIS Data Set using R.  Same titles, same scales, same colors.  
+
+  Answer: I imported the built-in IRIS data set and grouped IRIS species and plotted the correlation between
+  the variables
+
+```{r import iris dataset}
+class(iris)
+```
+
+```{r iris plot, echo=FALSE}
+
+#pairs(iris[1:4], main ="Iris Data (red=setosa,green=versicolor,blue=virginica)", pch = 21, bg = c("red", "green3", "blue")[unclass(iris$Species)])
+
+myColors = c("red","green","blue");
+mySymbols = c(19, 19, 19);
+species = as.numeric(iris[,5]);
+plot( iris[,-5],
+      col=myColors[species], 
+      pch=mySymbols[species],
+      main="Iris Data (red=setosa,green=versicolor,blue=virginica)"
+    );
+
+```
+
+
+
+
+
+
+\newpage
+# __Question 3__ 
+
+  Right 2-3 sentences concisely defining the IRIS Data Set
+
+  Answer: The IRIS data set, sometimes called the Fishers or Anderson data set. Fisher was a British statistician and biologist and published the results of the IRIS flower report in 1936.
+  The IRIS dataset measured the flowers sepal length, sepal width, petal length, and pedal length over a set of 50 flowers and 3 types of species (setosa, versicolor, and virginica). The data set   is the rock child for begginers learning data science, hence it is built into R's core language engine. 
+
+
+\newpage
+# Question 4 
+
+  Import "personality-raw.txt" into R.  Remove the V00 column.  Create two new columns from the current column "date_test"
+  
+  Below is the R code I developed to import the personality data and wrangle the data's date_test column into 2 additional columns, year and week. These columns were sorted and used to
+  find unique md5 email strings. I then extracted the md5 email string for "monte.shaffer@gmail.com" and did a summary of the data set using custom functions seen below.
+
+
+```{r read personality data}
+
+#source("MyFunctions.R")
+
+personality_df <- read.table("personality-raw.txt", header=TRUE, sep =  "|")
+
+#copy data frame
+modified_df <- personality_df
+
+#remove column $V00
+modified_df$V00 <- NULL 
+
+#split the data_test column into year and week
+year_time_split <- str_split_fixed(modified_df$date_test, "\\s+", 2)
+year_string <-  as.Date(year_time_split[,1],'%m/%d/%Y')
+year_numeric <- as.numeric(format(year_string,'%Y'))
+
+modified_df["year"] <- year_numeric
+modified_df["week"] <- as.numeric(strftime((year_string), format = "%V"))
+
+
+# sort data frame by year then week
+sorted_df <- arrange(modified_df,desc(modified_df$year), desc(modified_df$week))
+
+#remove unique email address
+unique_vec <- unique(modified_df$md5_email)
+length(unique_vec)
+
+unique_df <- sorted_df %>% distinct(md5_email, .keep_all = TRUE)
+
+#write unique email dataframe to text file, pipe delimited
+write.table(unique_df, file = "personality-clean.txt", sep = "|")
+
+
+```
+
+```{r myDosummary}
+
+#filter for Monte Shaffer email
+monte_df <- filter(unique_df, unique_df$md5_email == "b62c73cdaf59e0a13de495b84030734e")
+
+#remove all columns not starting with "V"
+monte_df_clean <- monte_df %>% dplyr:: select(starts_with("V"))
+
+#Transpose the vector from row to column format
+monte_df_clean_t <- t(monte_df_clean)
+
+#Summarize the data set
+doSummary(monte_df_clean_t)
+
+```
+
+
+
+
+\newpage
+# Question 5 
+
+Write functions for doSummary and sampleVariance and doMode. test these functions in your homework on the "monte.shaffer@gmail.com" record from the clean dataset.  Report your findings.  For this "monte.shaffer@gmail.com" record, also create z-scores.  Plot(x,y) where x is the raw scores for "monte.shaffer@gmail.com" and y is the z-scores from those raw scores.  Include the plot in your assignment, and write 2 sentences describing what pattern you are seeing and why this pattern is present.
+
+I created R functions, "doSummary", "sampleVariance" and "doMode"
+
+Dataset findings:
+* original dataset had 838 records
+* clean dataset had 678 records
+* 2-pass and Naive algorithms produced the same results for variance
+
+Zscores plot:
+* The Z scores plot. A Z score, also called the "Standard Score", measures how many standard deviations below or above the population mean a raw score is. A Z score of 0 ("zero") is exactly average. A Z score of 1 is 1 stadard deviation above the mean.  A Z score of -2 is  -2 standard deviations below the mean.
+
+The average for "monte.shaffer@gmail.com" was 3.4 and the Z score plot shows a Z score of 0 at 3.4.  
+
+
+```{r doSummary functions}
+
+
+
+
+```
+
+\newpage
+# Question 6
+
+  Compare Will Smith and Denzel Washington. You will have to create a new variable $millions.2000 that converts each movie's $millions based on the $year of the movie, so all dollars are in the     same time frame.  You will need inflation data from about 1980-2020 to make this work.
+  
+  I created a custom function seen below to convert the actors revenue and adjust for inflation.  The inflation year is passed in by the user so its flexible by any given year from 1920-2020
+  
+
+```{r IMBD analysis}
+
+  #source("MyFunctions.R")
+
+  nmid = "nm0000226";
+  will = grabFilmsForPerson(nmid);
+  a <- will$movies.50
+  #plot(will$movies.50[,c(10)]);
+  #boxplot(will$movies.50$millions); 
+  widx =  which.max(will$movies.50$millions);
+  will$movies.50[widx,];
+  #summary(will$movies.50$year);  # bad boys for life ... did data change?
+ 
+  #Denzel Washington
+  nmid = "nm0000243";
+ 	denzel = grabFilmsForPerson(nmid);
+ 	#plot(denzel$movies.50[,c(10)]);
+  #boxplot(denzel$movies.50$millions);
+	didx =  which.max(denzel$movies.50$millions);
+	denzel$movies.50[didx,];
+	#summary(denzel$movies.50$year);
+	
+	par(mfrow=c(1,2))
+	boxplot(will$movies.50$millions, main=will$name, ylim=c(0,360), ylab="Raw Millions" )
+	boxplot(denzel$movies.50$millions, main=denzel$name, ylim=c(0,360), ylab="Raw Millions" )
+ 
+	
+	#read inflation data
+	inflation_df <- read.table("inflation.txt", header=TRUE, sep =  "|")
+	
+	#calculate inflation adjustment for Will Smith movie revenue
+	will$millions.2000 <- convert_inflation(will$movies.50,2000, inflation_df)
+	#will$millions.2000
+	
+	#calculate inflation adjustment for Denzel Washington movie revenue
+	denzel$millions.2000 <- convert_inflation(denzel$movies.50,2000, inflation_df)
+	#denzel$millions.2000
+	
+	#Plot new box plots with inflation adjusted revenues
+	par(mfrow=c(1,2))
+	boxplot(will$millions.2000, main=will$name, ylim=c(0,600), ylab="Inflation adjusted Millions" )
+	boxplot(denzel$millions.2000, main=denzel$name, ylim=c(0,600), ylab="Inflation adjusted Millions" )
+
+
+```
+
+
+\newpage
+# Question 7
+
+  Build side-by-side box plots on several of the variables (including #6) to compare the two movie stars.  After each box plot, write 2+ sentence describing what you are seeing, and what            conclusions you can logically make. You will need to review what the box plot is showing with the box portion, the divider in the box, and the whiskers.
+  
+  I created the following box plots, Will Smith vs. Denzel Washington:
+  * Box plot for ratings
+    The resuls of the ratings showed Denzel had a better rating over his career than Will S.  Will S. does have one outlier rating of 2.3(Student of the Year 2). Denzel has a tight box plot,
+    which showes his movies ranking have been consistent over his career
+    
+  * Box plot for movie length(minutes)
+    The results of the movie minutes showed Denzel tends to make longer movies than Will S.  Will S. box plot shows a taller whiskers which indicates he has several movies he made
+    that were outside his normal movie length.  These movies where "Ali" and "Bad Boys II"
+
+```{r boxplot summary of IMBD}
+
+  #Plot movie rankings
+	par(mfrow=c(1,2))
+	boxplot(will$movies.50$ratings, main=will$name, ylim=c(0,10), ylab="Ratings" )
+	boxplot(denzel$movies.50$ratings, main=denzel$name, ylim=c(0,10), ylab="Ratings" )
+	
+	#plot movie minutes
+	par(mfrow=c(1,2))
+	boxplot(will$movies.50$minutes, main=will$name, ylim=c(60,180), ylab="Minutes" )
+	boxplot(denzel$movies.50$minutes, main=denzel$name, ylim=c(60,180), ylab="Minutes" )
+
+
+```
+
+
+

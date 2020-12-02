@@ -1,0 +1,64 @@
+N,ISO,Name1,Name2,Name3,Name4,Capital,Area,Population,Density,Urban,Region1,Region2
+1,VN-44,An Giang,An Giang Province,An Giang,An Giang Province,Long Xuyên,3536.8,2142709,605.8,28.4,Mekong Delta,Đồng bằng sông Cửu Long
+2,VN-43,Ba Ria–Vung Tau,Ba Ria - Vung Tau,Bà Rịa–Vũng Tàu,Bà Rịa–Vũng Tàu Province,Vũng Tàu,1989.6,996682,500.9,49.9,Southeast,Đông Nam Bộ
+3,VN-54,Bac Giang,Bac Giang,Bắc Giang,Bắc Giang Province,Bắc Giang,3827.4,1554131,406.1,9.4,Northeast,Trung du và miền núi phía Bắc
+4,VN-53,Bac Kan,Bac Kan Province,Bắc Kạn,Bắc Kạn Province,Bắc Kạn,4868.4,293826,60.4,16.1,Northeast,Trung du và miền núi phía Bắc
+5,VN-55,Bac Lieu,Bac Lieu,Bạc Liêu,Bạc Liêu Province,Bạc Liêu,2584.1,856518,331.5,26.1,Mekong Delta,Đồng bằng sông Cửu Long
+6,VN-56,Bac Ninh,Bac Ninh Province,Bắc Ninh,Bắc Ninh Province,Bắc Ninh,823.1,1024472,1244.7,23.5,Red River Delta,Đồng bằng sông Hồng
+7,VN-50,Ben Tre,Ben Tre,Bến Tre,Bến Tre Province,Bến Tre,2360.2,1255946,532.1,9.9,Mekong Delta,Đồng bằng sông Cửu Long
+8,VN-31,Binh Dinh,Binh Dinh Province,Bình Định,Bình Định Province,Qui Nhơn,6039.6,1486465,246.1,27.7,South Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+9,VN-57,Binh Duong,Binh Duong,Bình Dương,Bình Dương Province,Thủ Dầu Một,2696.2,1481550,549.5,29.9,Southeast,Đông Nam Bộ
+10,VN-58,Binh Phuoc,Binh Phuoc,Bình Phước,Bình Phước Province,Đồng Xoài,6883.4,873598,126.9,16.5,Southeast,Đông Nam Bộ
+11,VN-40,Binh Thuan,Binh Thuan Province,Bình Thuận,Bình Thuận Province,Phan Thiết,7836.9,1167023,148.9,39.3,South Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+12,VN-59,Ca Mau,Ca Mau,Cà Mau,Cà Mau Province,Cà Mau,5331.7,1206938,226.4,20.4,Mekong Delta,Đồng bằng sông Cửu Long
+13,VN-CT,Can Tho,Can Tho,Cần Thơ,Cần Thơ (city),-----,1401.6,1188435,847.9,65.9,Mekong Delta,Đồng bằng sông Cửu Long
+14,VN-04,Cao Bang,Cao Bang,Cao Bằng,Cao Bằng Province,Cao Bằng,6724.6,507183,75.4,16.9,Northeast,Trung du và miền núi phía Bắc
+15,VN-DN,Da Nang,Da Nang,Đà Nẵng,Đà Nẵng (city),-----,1257.3,887435,705.8,86.9,South Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+16,VN-33,Dak Lak,Djak Lak Province,Đắk Lắk,Đắk Lắk Province,Buôn Ma Thuột,13139.2,1733624,131.9,24,Central Highlands,Tây Nguyên
+17,VN-72,Dak Nong,Dak Nong,Đắk Nông,Đắk Nông Province,Gia Nghĩa,6516.9,489382,75.1,14.7,Central Highlands,Tây Nguyên
+18,VN-71,Dien Bien,Dien Bien,Điện Biên,Điện Biên Province,Điện Biên Phủ,9562.5,490306,51.3,15,Northwest,Trung du và miền núi phía Bắc
+19,VN-39,Dong Nai,Dong Nai,Đồng Nai,Đồng Nai Province,Biên Hòa,5903.9,2486154,421.1,33.2,Southeast,Đông Nam Bộ
+20,VN-45,Dong Thap,Djong Thap Province,Đồng Tháp,Đồng Tháp Province,Cao Lãnh,3376.4,1666467,493.9,17.8,Mekong Delta,Đồng bằng sông Cửu Long
+21,VN-30,Gia Lai,Gia Lai Province,Gia Lai,Gia Lai Province,Pleiku,15536.9,1274412,82,28.6,Central Highlands,Tây Nguyên
+22,VN-03,Ha Giang,Ha Giang,Hà Giang,Hà Giang Province,Hà Giang,7945.8,724537,91.2,11.6,Northeast,Trung du và miền núi phía Bắc
+23,VN-63,Ha Nam,Ha Nam,Hà Nam,Hà Nam Province,Phủ Lý,859.7,784045,912,9.5,Red River Delta,Đồng bằng sông Hồng
+24,VN-HN,Ha Noi,Hanoi,Hà Nội,Hà Nội (city),-----,3119,6451909,2068.6,41,Red River Delta,Đồng bằng sông Hồng
+25,VN-23,Ha Tinh,Ha Tinh Province,Hà Tĩnh,Hà Tĩnh Province,Hà Tĩnh,6026.5,1227038,203.6,14.9,North Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+26,VN-61,Hai Duong,Hai Duong,Hải Dương,Hải Dương Province,Hải Dương,1652.8,1705059,1031.6,19,Red River Delta,Đồng bằng sông Hồng
+27,VN-HP,Hai Phong,Haiphong,Hải Phòng,Hải Phòng (city),-----,1520.7,1837173,1208.1,46.1,Red River Delta,Đồng bằng sông Hồng
+28,VN-73,Hau Giang,Hau Giang,Hậu Giang,Hậu Giang Province,Vị Thanh,1601.1,757300,473,19.6,Mekong Delta,Đồng bằng sông Cửu Long
+29,VN-SG,Ho Chi Minh Sai Gon,Ho Chi Minh City,Hồ Chí Minh (Sài Gòn),Thành phố Hồ Chí Minh (city),-----,2095.1,7162864,3418.9,83.3,Southeast,Đông Nam Bộ
+30,VN-14,Hoa Binh,Hoa Binh,Hòa Bình,Hòa Bình Province,Hòa Bình,4684.2,785217,167.6,15,Northwest,Trung du và miền núi phía Bắc
+31,VN-66,Hung Yen,Hung Yen Province,Hưng Yên,Hưng Yên Province,Hưng Yên,923.5,1127903,1221.3,12.1,Red River Delta,Đồng bằng sông Hồng
+32,VN-34,Khanh Hoa,Khanh Hoa Province,Khánh Hòa,Khánh Hòa Province,Nha Trang,5217.6,1157604,221.9,39.9,South Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+33,VN-47,Kien Giang,Kien Giang,Kiên Giang,Kiên Giang Province,Rạch Giá,6348.3,1688248,265.9,27,Mekong Delta,Đồng bằng sông Cửu Long
+34,VN-28,Kon Tum,Kon Tum Province,Kon Tum,Kon Tum Province,Kon Tum,9690.5,430133,44.4,33.5,Central Highlands,Tây Nguyên
+35,VN-01,Lai Chau,Lai Chau,Lai Châu,Lai Châu Province,Lai Châu,9112.3,370502,40.7,14.2,Northwest,Trung du và miền núi phía Bắc
+36,VN-35,Lam Dong,Lam Djong,Lâm Đồng,Lâm Đồng Province,Đà Lạt,9776.1,1187574,121.5,37.8,Central Highlands,Tây Nguyên
+37,VN-09,Lang Son,Lang Son,Lạng Sơn,Lạng Sơn Province,Lạng Sơn,8331.2,732515,87.9,19.2,Northeast,Trung du và miền núi phía Bắc
+38,VN-02,Lao Cai,Lao Cai,Lào Cai,Lào Cai Province,Lào Cai,6383.9,614595,96.3,21,Northeast,Trung du và miền núi phía Bắc
+39,VN-41,Long An,Long An Province,Long An,Long An Province,Tân An,4493.8,1436066,319.6,17.4,Mekong Delta,Đồng bằng sông Cửu Long
+40,VN-67,Nam Dinh,Nam Dinh,Nam Định,Nam Định Province,Nam Định,1650.8,1828111,1107.4,17.6,Red River Delta,Đồng bằng sông Hồng
+41,VN-22,Nghe An,Nghe An,Nghệ An,Nghệ An Province,Vinh,16498.5,2912041,176.5,12.9,North Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+42,VN-18,Ninh Binh,Ninh Binh Province,Ninh Bình,Ninh Bình Province,Ninh Bình,1392.4,898999,645.6,17.9,Red River Delta,Đồng bằng sông Hồng
+43,VN-36,Ninh Thuan,Ninh Thuan Province,Ninh Thuận,Ninh Thuận Province,Phan Rang–Tháp Chàm,3363.1,564993,168,36.1,South Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+44,VN-68,Phu Tho,Phu Tho Province,Phú Thọ,Phú Thọ Province,Việt Trì,3528.4,1316389,373.1,15.8,Northeast,Trung du và miền núi phía Bắc
+45,VN-32,Phu Yen,Phu Yen Province,Phú Yên,Phú Yên Province,Tuy Hòa,5060.6,862231,170.4,21.8,South Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+46,VN-24,Quang Binh,Quang Binh Province,Quảng Bình,Quảng Bình Province,Đồng Hới,8065.3,844893,104.8,15,North Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+47,VN-27,Quang Nam,Quang Nam Province,Quảng Nam,Quảng Nam Province,Tam Kỳ,10438.3,1422319,136.3,18.6,South Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+48,VN-29,Quang Ngai,Quang Ngai,Quảng Ngãi,Quảng Ngãi Province,Quảng Ngãi,5152.7,1216773,236.1,14.6,South Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+49,VN-13,Quang Ninh,Quang Ninh Province,Quảng Ninh,Quảng Ninh Province,Hạ Long,6099,1144988,187.7,51.9,Northeast,Trung du và miền núi phía Bắc
+50,VN-25,Quang Tri,Quang Tri Province,Quảng Trị,Quảng Trị Province,Đông Hà,4760.1,598324,125.7,27.4,North Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+51,VN-52,Soc Trang,Soc Trang,Sóc Trăng,Sóc Trăng Province,Sóc Trăng,3312.3,1292853,390.3,19.4,Mekong Delta,Đồng bằng sông Cửu Long
+52,VN-05,Son La,Son La,Sơn La,Sơn La Province,Sơn La,14174.4,1076055,75.9,13.8,Northwest,Trung du và miền núi phía Bắc
+53,VN-37,Tay Ninh,Tay Ninh Province,Tây Ninh,Tây Ninh Province,Tây Ninh,4035.9,1066513,264.3,15.6,Southeast,Đông Nam Bộ
+54,VN-20,Thai Binh,Thai Binh,Thái Bình,Thái Bình Province,Thái Bình,1546.5,1781842,1152.1,9.7,Red River Delta,Đồng bằng sông Hồng
+55,VN-69,Thai Nguyen,Thai Nguyen,Thái Nguyên,Thái Nguyên Province,Thái Nguyên,3546.6,1123116,316.7,25.6,Northeast,Trung du và miền núi phía Bắc
+56,VN-21,Thanh Hoa,Thanh Hoa,Thanh Hóa,Thanh Hóa Province,Thanh Hóa,11136.3,3400595,305.4,10.4,North Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+57,VN-26,Thua Thien–Hue,Thua Thien Hue,Thừa Thiên Huế,Thừa Thiên–Huế Province,Huế,5065.3,1087420,214.7,36,North Central Coast,Bắc Trung Bộ và Duyên hải miền Trung
+58,VN-46,Tien Giang,Tien Giang,Tiền Giang,Tiền Giang Province,Mỹ Tho,2484.2,1672271,673.2,13.7,Mekong Delta,Đồng bằng sông Cửu Long
+59,VN-51,Tra Vinh,Tra Vinh,Trà Vinh,Trà Vinh Province,Trà Vinh,2295.1,1003012,437,15.3,Mekong Delta,Đồng bằng sông Cửu Long
+60,VN-07,Tuyen Quang,Tuyen Quang,Tuyên Quang,Tuyên Quang Province,Tuyên Quang,5870.4,724821,123.5,13,Northeast,Trung du và miền núi phía Bắc
+61,VN-49,Vinh Long,Vinh Long,Vĩnh Long,Vĩnh Long Province,Vĩnh Long,1479.1,1024707,692.8,15.3,Mekong Delta,Đồng bằng sông Cửu Long
+62,VN-70,Vinh Phuc,Vinh Phuc Province,Vĩnh Phúc,Vĩnh Phúc Province,Vĩnh Yên,1373.2,999786,728.1,22.4,Red River Delta,Đồng bằng sông Hồng
+63,VN-06,Yen Bai,Yen Bai,Yên Bái,Yên Bái Province,Yên Bái,6899.5,740397,107.3,18.8,Northeast,Trung du và miền núi phía Bắc

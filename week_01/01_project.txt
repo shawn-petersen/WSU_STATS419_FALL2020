@@ -1,0 +1,12 @@
+Title:  Project "measure" (100 points)
+
+Objective: To learn about data collection and exploratory multivariate data analysis.
+
+Due:  
+	Handout 		(10 points): please submit on Blackboard before Tuesday	September 8 	at 11:59PM (before midnight).
+	Data Collection		(40+10 points): please submit on Blackboard before Monday 	September 14 	at 11:59PM (before midnight).
+	Write-up 		(30 points): please submit on Blackboard before Monday 	October 12 	at 11:59PM (before midnight).
+	Video presentation 	(10 points): please submit on Blackboard before Monday 	October 12 	at 11:59PM (before midnight).
+
+
+

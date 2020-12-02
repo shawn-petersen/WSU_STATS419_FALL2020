@@ -1,0 +1,39 @@
+Title:  Reading Assignment "Exploratory Data Analysis" (10 points)
+
+Due:  Please submit on Blackboard before Monday August 31 at 11:59PM (before midnight).
+
+Deliverable:  Prepare a document (preferably a PDF) that includes at the top right:  Your name, WSU email, WSU Cougar ID Number, STATS 419, Instructor: Monte J. Shaffer, Date
+
+Instructions:  For each question, include the original question and your response below the original question.
+
+-------------
+
+1.  Where did the VLSS data come from?  Do some research and provide a URL for a link to the official page with the data.  Describe how you found it.  How much does it cost to purchase? [Please don't buy it.]  If you can find an online copy of the VLSS data, please also provide a link.
+
+2.  How were the 3 research questions derived?  Are they constrained by the data?  If so, how should you derive research questions?
+
+3.  Review the different graphs and the R code to generate them.  From Figure 1.6, is there evidence to conclude that Urban homes have higher expenditures than Rural homes?  How would you logically defend your conclusion?
+
+4.  How was Figure 1.7 plotted?  What was the R code to do this?
+
+5.  From Figure 1.8 and Figure 1.9, can we conclude that the South East region has higher expenditures than the other regions?  Would it be possible to graph similar plots of the data by both region (7 choices) and by Rural/Urban (2 choices)?
+
+
+Rubric (see syllabus for [F] and [S] criteria):
+[C] Content (Responses): 4
+[F] Adherence to Format Requirements: 3
+[S] Style: 3
+
+
+Other:  
+In your thought journal for "Reading: Exploratory Data Analysis" please define:
+	* Exploratory Data Analysis
+	* Histogram
+	* Kernel Density
+	* Winsorized/Trimmed Mean
+	* Boxplots
+	* Mean/Error bars and how they are different from Confidence Intervals
+
+
+
+	

@@ -1,0 +1,730 @@
+\documentclass{article}
+
+
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+
+\usepackage{graphicx,float,wrapfig}
+\usepackage{moreverb} % monospace
+\usepackage{fancyhdr} % fancy header 
+\usepackage{lastpage} % last page 
+\usepackage{setspace} % line spacing
+\usepackage{amsmath,amsfonts,amsthm,amssymb}  % math fonts 
+\usepackage{tabularx} % advanced tables
+
+%%% default RStudio packages %%%
+\usepackage[unicode=true]{hyperref}
+
+
+
+
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{listings}
+% xcolor ... #rrggbb ... 
+
+
+
+
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://github.com/svmiller/svm-r-markdown-templates/blob/master/svm-latex-memo.tex
+
+
+%\usepackage[sort]{natbib}  %% will alpha/numeric in order inline
+%	\setcitestyle{aysep={}} %% no year, comma just year
+\usepackage[numbers]{natbib}
+	
+	
+\newcommand{\hmwkCourse}{ \textbf{STATS 419 Survey of Multivariate Analysis} }
+\newcommand{\hmwkCourseShort}{}
+\newcommand{\hmwkTitle}{week 03 Assignment}
+\newcommand{\hmwkAuthor}{Shawn Petersen}
+\newcommand{\hmwkEmail}{\href{mailto:shawn.petersen@wsu.edu}{\nolinkurl{shawn.petersen@wsu.edu}}}
+\newcommand{\hmwkWSU}{[]}
+\newcommand{\hmwkInstructor}{Instructor: Monte J. Shaffer}
+\newcommand{\hmwkDate}{19 September 2020}
+
+
+\pagestyle{fancy}   
+\lhead{\hmwkCourseShort}
+\chead{\hmwkTitle}
+\rhead{\hmwkAuthor}
+\lfoot{}
+\cfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}
+\rfoot{}
+
+
+
+\title{\hmwkCourse \\ \hmwkTitle}
+\author{\hmwkAuthor \\ (\hmwkEmail) \\ \hmwkWSU \\[0.5in] \hmwkInstructor }
+\date{\hmwkDate}
+
+
+\usepackage{titling}
+\pretitle{\begin{flushright}\LARGE}
+\posttitle{\par\end{flushright}\vskip 0.5em}
+\preauthor{\begin{flushright}\large \lineskip 0.5em}
+\postauthor{\par\end{flushright}}
+\predate{\begin{flushright}\large}
+\postdate{\par\end{flushright}}
+
+
+%\tracingall
+
+
+
+
+\hypersetup{breaklinks=true,%
+            bookmarks=true,%
+            pdfauthor={Shawn Petersen},%
+            pdftitle={week 03 Assignment},%
+            colorlinks=true,%
+            citecolor=blue,%
+            urlcolor=blue,%
+            linkcolor=magenta,%
+            pdfborder={0 0 0}%
+            }%
+            
+
+
+\begin{document}
+
+\maketitle
+
+
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{getwd}\NormalTok{()}
+
+\KeywordTok{library}\NormalTok{(devtools)  }\CommentTok{# devtools is requireed for source_url to work}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: usethis
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my.source =}\StringTok{ 'github'}
+\NormalTok{my.github.path =}\StringTok{ "https://raw.githubusercontent.com/shawn-petersen/WSU_STATS419_FALL2020/"}
+\KeywordTok{source}\NormalTok{( }\KeywordTok{paste0}\NormalTok{(my.github.path,}\StringTok{"master/libraries/libraries.R"}\NormalTok{) );}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages ------------------------------------------------------------------------------------------------------------------------------------------------------------- tidyverse 1.3.0 --
+\end{verbatim}
+
+\begin{verbatim}
+## v ggplot2 3.3.2     v purrr   0.3.4
+## v tibble  3.0.3     v dplyr   1.0.2
+## v tidyr   1.1.2     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.5.0
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tibble' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tidyr' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'purrr' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'forcats' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ---------------------------------------------------------------------------------------------------------------------------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tidyselect' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'rmarkdown' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'lubridate' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'lubridate'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     date, intersect, setdiff, union
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'rvest' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: xml2
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'xml2' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'rvest'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:purrr':
+## 
+##     pluck
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:readr':
+## 
+##     guess_encoding
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'digest' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{source}\NormalTok{( }\KeywordTok{paste0}\NormalTok{(my.github.path,}\StringTok{"master/functions/functions-imdb.R"}\NormalTok{) );}
+\KeywordTok{source}\NormalTok{( }\KeywordTok{paste0}\NormalTok{(my.github.path,}\StringTok{"master/functions/myFunctions.R"}\NormalTok{) );}
+
+\CommentTok{#local.path = "D:/_git_/WSU_STATS419_FALL2020/";}
+\CommentTok{#source( paste0(local.path,"functions/myFunctions.R"), local=T );}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+For homework week \#2 we are applying our ``R'' knowledge for matrix
+math, data wrangling personality data, creating functions for basic data
+analysis, looking at IMDB data from Will Smith \& Denzel Washington and
+box plots the results of our movie analysis.
+
+\newpage
+
+\hypertarget{question-1}{%
+\section{\texorpdfstring{\textbf{Question
+1}}{Question 1}}\label{question-1}}
+
+\hypertarget{rotation-matrix}{%
+\subsection{Rotation Matrix}\label{rotation-matrix}}
+
+Create the ``rotate matrix'' functions as described in lectures. Apply
+to the example ``myMatrix''
+
+Answer: I created one function and the user is able to pass in the
+original matrix and a rotational value in degrees. I support 90, 180,
+and 270 degreee rotations with this function
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Function to rotate a matrix based on user passed parameter on degrees}
+\NormalTok{transposeMatrix <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(myMatrix,rotate_degrees)}
+\NormalTok{\{}
+\NormalTok{   transformation_mat <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{ (}\KeywordTok{c}\NormalTok{ ( }\DecValTok{0}\NormalTok{,  }\DecValTok{0}\NormalTok{,  }\DecValTok{1}\NormalTok{,}
+                                     \DecValTok{0}\NormalTok{,  }\DecValTok{1}\NormalTok{,  }\DecValTok{0}\NormalTok{,}
+                                     \DecValTok{1}\NormalTok{,  }\DecValTok{0}\NormalTok{,  }\DecValTok{0}\NormalTok{), }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{, }\DataTypeTok{byrow=}\NormalTok{T);}
+  
+  \ControlFlowTok{if}\NormalTok{ (rotate_degrees }\OperatorTok{==}\StringTok{ }\DecValTok{90}\NormalTok{)\{}
+\NormalTok{    matrixrotate <-}\StringTok{ }\KeywordTok{t}\NormalTok{(myMatrix }\OperatorTok{%*%}\StringTok{ }\NormalTok{transformation_mat)}
+\NormalTok{  \}}\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (rotate_degrees }\OperatorTok{==}\StringTok{ }\DecValTok{180}\NormalTok{)\{}
+\NormalTok{    temprotate <-}\StringTok{ }\KeywordTok{t}\NormalTok{(myMatrix }\OperatorTok{%*%}\StringTok{ }\NormalTok{transformation_mat)}
+\NormalTok{    matrixrotate <-}\StringTok{ }\KeywordTok{t}\NormalTok{(temprotate }\OperatorTok{%*%}\StringTok{ }\NormalTok{transformation_mat)}
+\NormalTok{  \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (rotate_degrees }\OperatorTok{==}\StringTok{ }\DecValTok{270}\NormalTok{)\{}
+\NormalTok{    temprotate <-}\StringTok{ }\KeywordTok{t}\NormalTok{(myMatrix }\OperatorTok{%*%}\StringTok{ }\NormalTok{transformation_mat)}
+\NormalTok{    temprotate <-}\StringTok{ }\KeywordTok{t}\NormalTok{(temprotate }\OperatorTok{%*%}\StringTok{ }\NormalTok{transformation_mat)}
+\NormalTok{    matrixrotate <-}\StringTok{ }\KeywordTok{t}\NormalTok{(temprotate }\OperatorTok{%*%}\StringTok{ }\NormalTok{transformation_mat)}
+\NormalTok{  \}}\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{print}\NormalTok{ (}\StringTok{"Invalid rotation passed. Returning original, unchanged matrix"}\NormalTok{)}
+\NormalTok{    matrixrotate <-}\StringTok{ }\NormalTok{myMatrix}
+\NormalTok{  \}}
+  
+  \KeywordTok{return}\NormalTok{(matrixrotate)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{origina-matrix}{%
+\subsection{Origina Matrix}\label{origina-matrix}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{original_matrix <-}\StringTok{  }\KeywordTok{matrix}\NormalTok{ (}\KeywordTok{c}\NormalTok{ ( }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{,}
+                               \DecValTok{0}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{,}
+                               \DecValTok{4}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{), }\DataTypeTok{nrow=}\DecValTok{3}\NormalTok{, }\DataTypeTok{byrow=}\NormalTok{T);}
+
+
+
+\NormalTok{original_matrix }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    0    2
+## [2,]    0    3    0
+## [3,]    4    0    5
+\end{verbatim}
+
+\hypertarget{rotate-matrix-90-degrees}{%
+\subsection{\texorpdfstring{\textbf{Rotate Matrix 90
+Degrees}}{Rotate Matrix 90 Degrees}}\label{rotate-matrix-90-degrees}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rotateMatrix90 <-}\StringTok{ }\KeywordTok{transposeMatrix}\NormalTok{(original_matrix,}\DecValTok{90}\NormalTok{)}
+\NormalTok{rotateMatrix90}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    2    0    5
+## [2,]    0    3    0
+## [3,]    1    0    4
+\end{verbatim}
+
+\hypertarget{rotate-matrix-180-degrees}{%
+\subsection{\texorpdfstring{\textbf{Rotate Matrix 180
+Degrees}}{Rotate Matrix 180 Degrees}}\label{rotate-matrix-180-degrees}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rotateMatrix180 <-}\StringTok{ }\KeywordTok{transposeMatrix}\NormalTok{(original_matrix,}\DecValTok{180}\NormalTok{)}
+\NormalTok{rotateMatrix180}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    5    0    4
+## [2,]    0    3    0
+## [3,]    2    0    1
+\end{verbatim}
+
+\hypertarget{rotate-matrix-270-degrees}{%
+\subsection{\texorpdfstring{\textbf{Rotate Matrix 270
+Degrees}}{Rotate Matrix 270 Degrees}}\label{rotate-matrix-270-degrees}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rotateMatrix270 <-}\StringTok{ }\KeywordTok{transposeMatrix}\NormalTok{(original_matrix,}\DecValTok{270}\NormalTok{)}
+\NormalTok{rotateMatrix270}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    4    0    1
+## [2,]    0    3    0
+## [3,]    5    0    2
+\end{verbatim}
+
+\newpage
+
+\hypertarget{question-2}{%
+\section{\texorpdfstring{\textbf{Question
+2}}{Question 2}}\label{question-2}}
+
+Recreate the graphic for the IRIS Data Set using R. Same titles, same
+scales, same colors.
+
+Answer: I imported the built-in IRIS data set and grouped IRIS species
+and plotted the correlation between the variables
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "data.frame"
+\end{verbatim}
+
+\includegraphics{week_03_homework_files/figure-latex/iris plot-1.pdf}
+
+\newpage
+
+\hypertarget{question-3}{%
+\section{\texorpdfstring{\textbf{Question
+3}}{Question 3}}\label{question-3}}
+
+Right 2-3 sentences concisely defining the IRIS Data Set
+
+Answer: The IRIS data set, sometimes called the Fishers or Anderson data
+set. Fisher was a British statistician and biologist and published the
+results of the IRIS flower report in 1936. The IRIS dataset measured the
+flowers sepal length, sepal width, petal length, and pedal length over a
+set of 50 flowers and 3 types of species (setosa, versicolor, and
+virginica). The data set is the rock child for begginers learning data
+science, hence it is built into R's core language engine.
+
+\newpage
+
+\hypertarget{question-4}{%
+\section{Question 4}\label{question-4}}
+
+Import ``personality-raw.txt'' into R. Remove the V00 column. Create two
+new columns from the current column ``date\_test''
+
+Below is the R code I developed to import the personality data and
+wrangle the data's date\_test column into 2 additional columns, year and
+week. These columns were sorted and used to find unique md5 email
+strings. I then extracted the md5 email string for
+``\href{mailto:monte.shaffer@gmail.com}{\nolinkurl{monte.shaffer@gmail.com}}''
+and did a summary of the data set using custom functions seen below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#source("MyFunctions.R")}
+
+\NormalTok{personality_df <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"personality-raw.txt"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{sep =}  \StringTok{"|"}\NormalTok{)}
+
+\CommentTok{#copy data frame}
+\NormalTok{modified_df <-}\StringTok{ }\NormalTok{personality_df}
+
+\CommentTok{#remove column $V00}
+\NormalTok{modified_df}\OperatorTok{$}\NormalTok{V00 <-}\StringTok{ }\OtherTok{NULL} 
+
+\CommentTok{#split the data_test column into year and week}
+\NormalTok{year_time_split <-}\StringTok{ }\KeywordTok{str_split_fixed}\NormalTok{(modified_df}\OperatorTok{$}\NormalTok{date_test, }\StringTok{"}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{s+"}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{year_string <-}\StringTok{  }\KeywordTok{as.Date}\NormalTok{(year_time_split[,}\DecValTok{1}\NormalTok{],}\StringTok{'%m/%d/%Y'}\NormalTok{)}
+\NormalTok{year_numeric <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{format}\NormalTok{(year_string,}\StringTok{'%Y'}\NormalTok{))}
+
+\NormalTok{modified_df[}\StringTok{"year"}\NormalTok{] <-}\StringTok{ }\NormalTok{year_numeric}
+\NormalTok{modified_df[}\StringTok{"week"}\NormalTok{] <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{strftime}\NormalTok{((year_string), }\DataTypeTok{format =} \StringTok{"%V"}\NormalTok{))}
+
+
+\CommentTok{# sort data frame by year then week}
+\NormalTok{sorted_df <-}\StringTok{ }\KeywordTok{arrange}\NormalTok{(modified_df,}\KeywordTok{desc}\NormalTok{(modified_df}\OperatorTok{$}\NormalTok{year), }\KeywordTok{desc}\NormalTok{(modified_df}\OperatorTok{$}\NormalTok{week))}
+
+\CommentTok{#remove unique email address}
+\NormalTok{unique_vec <-}\StringTok{ }\KeywordTok{unique}\NormalTok{(modified_df}\OperatorTok{$}\NormalTok{md5_email)}
+\KeywordTok{length}\NormalTok{(unique_vec)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 678
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{unique_df <-}\StringTok{ }\NormalTok{sorted_df }\OperatorTok{%>%}\StringTok{ }\KeywordTok{distinct}\NormalTok{(md5_email, }\DataTypeTok{.keep_all =} \OtherTok{TRUE}\NormalTok{)}
+
+\CommentTok{#write unique email dataframe to text file, pipe delimited}
+\KeywordTok{write.table}\NormalTok{(unique_df, }\DataTypeTok{file =} \StringTok{"personality-clean.txt"}\NormalTok{, }\DataTypeTok{sep =} \StringTok{"|"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#filter for Monte Shaffer email}
+\NormalTok{monte_df <-}\StringTok{ }\KeywordTok{filter}\NormalTok{(unique_df, unique_df}\OperatorTok{$}\NormalTok{md5_email }\OperatorTok{==}\StringTok{ "b62c73cdaf59e0a13de495b84030734e"}\NormalTok{)}
+
+\CommentTok{#remove all columns not starting with "V"}
+\NormalTok{monte_df_clean <-}\StringTok{ }\NormalTok{monte_df }\OperatorTok{%>%}\StringTok{ }\NormalTok{dplyr}\OperatorTok{::}\StringTok{ }\KeywordTok{select}\NormalTok{(}\KeywordTok{starts_with}\NormalTok{(}\StringTok{"V"}\NormalTok{))}
+
+\CommentTok{#Transpose the vector from row to column format}
+\NormalTok{monte_df_clean_t <-}\StringTok{ }\KeywordTok{t}\NormalTok{(monte_df_clean)}
+
+\CommentTok{#Summarize the data set}
+\KeywordTok{doSummary}\NormalTok{(monte_df_clean_t)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Record lengeth= 60 
+## Number of NA's= 0 
+## Mean= 3.48 
+## Median= 3.4 
+## Mode results= 4.2 
+## Naive sum =  208.8   
+## Naive sum squard =   771.04  
+## Naive variance = 0.7528136   
+## 2-pass sum = 208.8   
+## 2-pass sum squard =  771.04  
+## 2-pass variance =    0.7528136   
+## Built-in Standard deviation function= 0.8676483
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in plot.window(...): "pxlab" is not a graphical parameter
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in plot.xy(xy, type, ...): "pxlab" is not a graphical parameter
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in axis(side = side, at = at, labels = labels, ...): "pxlab" is not a
+## graphical parameter
+
+## Warning in axis(side = side, at = at, labels = labels, ...): "pxlab" is not a
+## graphical parameter
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in box(...): "pxlab" is not a graphical parameter
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in title(...): "pxlab" is not a graphical parameter
+\end{verbatim}
+
+\includegraphics{week_03_homework_files/figure-latex/myDosummary-1.pdf}
+
+\newpage
+
+\hypertarget{question-5}{%
+\section{Question 5}\label{question-5}}
+
+Write functions for doSummary and sampleVariance and doMode. test these
+functions in your homework on the
+``\href{mailto:monte.shaffer@gmail.com}{\nolinkurl{monte.shaffer@gmail.com}}''
+record from the clean dataset. Report your findings. For this
+``\href{mailto:monte.shaffer@gmail.com}{\nolinkurl{monte.shaffer@gmail.com}}''
+record, also create z-scores. Plot(x,y) where x is the raw scores for
+``\href{mailto:monte.shaffer@gmail.com}{\nolinkurl{monte.shaffer@gmail.com}}''
+and y is the z-scores from those raw scores. Include the plot in your
+assignment, and write 2 sentences describing what pattern you are seeing
+and why this pattern is present.
+
+I created R functions, ``doSummary'', ``sampleVariance'' and ``doMode''
+
+Dataset findings: * original dataset had 838 records * clean dataset had
+678 records * 2-pass and Naive algorithms produced the same results for
+variance
+
+Zscores plot: * The Z scores plot. A Z score, also called the ``Standard
+Score'', measures how many standard deviations below or above the
+population mean a raw score is. A Z score of 0 (``zero'') is exactly
+average. A Z score of 1 is 1 stadard deviation above the mean. A Z score
+of -2 is -2 standard deviations below the mean.
+
+The average for
+``\href{mailto:monte.shaffer@gmail.com}{\nolinkurl{monte.shaffer@gmail.com}}''
+was 3.4 and the Z score plot shows a Z score of 0 at 3.4.
+
+\newpage
+
+\hypertarget{question-6}{%
+\section{Question 6}\label{question-6}}
+
+Compare Will Smith and Denzel Washington. You will have to create a new
+variable \$millions.2000 that converts each movie's \$millions based on
+the \$year of the movie, so all dollars are in the same time frame. You
+will need inflation data from about 1980-2020 to make this work.
+
+I created a custom function seen below to convert the actors revenue and
+adjust for inflation. The inflation year is passed in by the user so its
+flexible by any given year from 1920-2020
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \CommentTok{#source("MyFunctions.R")}
+
+\NormalTok{  nmid =}\StringTok{ "nm0000226"}\NormalTok{;}
+\NormalTok{  will =}\StringTok{ }\KeywordTok{grabFilmsForPerson}\NormalTok{(nmid);}
+\NormalTok{  a <-}\StringTok{ }\NormalTok{will}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}
+  \CommentTok{#plot(will$movies.50[,c(10)]);}
+  \CommentTok{#boxplot(will$movies.50$millions); }
+\NormalTok{  widx =}\StringTok{  }\KeywordTok{which.max}\NormalTok{(will}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\OperatorTok{$}\NormalTok{millions);}
+\NormalTok{  will}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\NormalTok{[widx,];}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    rank   title      ttid year rated minutes                      genre ratings
+## 15   15 Aladdin tt6139732 2019    PG     128 Adventure, Family, Fantasy       7
+##    metacritic  votes millions
+## 15         53 216689   355.56
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \CommentTok{#summary(will$movies.50$year);  # bad boys for life ... did data change?}
+ 
+  \CommentTok{#Denzel Washington}
+\NormalTok{  nmid =}\StringTok{ "nm0000243"}\NormalTok{;}
+\NormalTok{    denzel =}\StringTok{ }\KeywordTok{grabFilmsForPerson}\NormalTok{(nmid);}
+    \CommentTok{#plot(denzel$movies.50[,c(10)]);}
+  \CommentTok{#boxplot(denzel$movies.50$millions);}
+\NormalTok{    didx =}\StringTok{  }\KeywordTok{which.max}\NormalTok{(denzel}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\OperatorTok{$}\NormalTok{millions);}
+\NormalTok{    denzel}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\NormalTok{[didx,];}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   rank             title      ttid year rated minutes                   genre
+## 1    1 American Gangster tt0765429 2007     R     157 Biography, Crime, Drama
+##   ratings metacritic  votes millions
+## 1     7.8         76 384191   130.16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{#summary(denzel$movies.50$year);}
+    
+    \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+    \KeywordTok{boxplot}\NormalTok{(will}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\OperatorTok{$}\NormalTok{millions, }\DataTypeTok{main=}\NormalTok{will}\OperatorTok{$}\NormalTok{name, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{360}\NormalTok{), }\DataTypeTok{ylab=}\StringTok{"Raw Millions"}\NormalTok{ )}
+    \KeywordTok{boxplot}\NormalTok{(denzel}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\OperatorTok{$}\NormalTok{millions, }\DataTypeTok{main=}\NormalTok{denzel}\OperatorTok{$}\NormalTok{name, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{360}\NormalTok{), }\DataTypeTok{ylab=}\StringTok{"Raw Millions"}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{week_03_homework_files/figure-latex/IMBD analysis-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{#read inflation data}
+\NormalTok{    inflation_df <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"inflation.txt"}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{sep =}  \StringTok{"|"}\NormalTok{)}
+    
+    \CommentTok{#calculate inflation adjustment for Will Smith movie revenue}
+\NormalTok{    will}\OperatorTok{$}\NormalTok{millions}\FloatTok{.2000}\NormalTok{ <-}\StringTok{ }\KeywordTok{convert_inflation}\NormalTok{(will}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\NormalTok{,}\DecValTok{2000}\NormalTok{, inflation_df)}
+    \CommentTok{#will$millions.2000}
+    
+    \CommentTok{#calculate inflation adjustment for Denzel Washington movie revenue}
+\NormalTok{    denzel}\OperatorTok{$}\NormalTok{millions}\FloatTok{.2000}\NormalTok{ <-}\StringTok{ }\KeywordTok{convert_inflation}\NormalTok{(denzel}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\NormalTok{,}\DecValTok{2000}\NormalTok{, inflation_df)}
+    \CommentTok{#denzel$millions.2000}
+    
+    \CommentTok{#Plot new box plots with inflation adjusted revenues}
+    \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+    \KeywordTok{boxplot}\NormalTok{(will}\OperatorTok{$}\NormalTok{millions}\FloatTok{.2000}\NormalTok{, }\DataTypeTok{main=}\NormalTok{will}\OperatorTok{$}\NormalTok{name, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{600}\NormalTok{), }\DataTypeTok{ylab=}\StringTok{"Inflation adjusted Millions"}\NormalTok{ )}
+    \KeywordTok{boxplot}\NormalTok{(denzel}\OperatorTok{$}\NormalTok{millions}\FloatTok{.2000}\NormalTok{, }\DataTypeTok{main=}\NormalTok{denzel}\OperatorTok{$}\NormalTok{name, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{600}\NormalTok{), }\DataTypeTok{ylab=}\StringTok{"Inflation adjusted Millions"}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{week_03_homework_files/figure-latex/IMBD analysis-2.pdf}
+
+\newpage
+
+\hypertarget{question-7}{%
+\section{Question 7}\label{question-7}}
+
+Build side-by-side box plots on several of the variables (including \#6)
+to compare the two movie stars. After each box plot, write 2+ sentence
+describing what you are seeing, and what conclusions you can logically
+make. You will need to review what the box plot is showing with the box
+portion, the divider in the box, and the whiskers.
+
+I created the following box plots, Will Smith vs.~Denzel Washington: *
+Box plot for ratings The resuls of the ratings showed Denzel had a
+better rating over his career than Will S. Will S. does have one outlier
+rating of 2.3(Student of the Year 2). Denzel has a tight box plot, which
+showes his movies ranking have been consistent over his career
+
+\begin{itemize}
+\tightlist
+\item
+  Box plot for movie length(minutes) The results of the movie minutes
+  showed Denzel tends to make longer movies than Will S. Will S. box
+  plot shows a taller whiskers which indicates he has several movies he
+  made that were outside his normal movie length. These movies where
+  ``Ali'' and ``Bad Boys II''
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \CommentTok{#Plot movie rankings}
+    \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+    \KeywordTok{boxplot}\NormalTok{(will}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\OperatorTok{$}\NormalTok{ratings, }\DataTypeTok{main=}\NormalTok{will}\OperatorTok{$}\NormalTok{name, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{), }\DataTypeTok{ylab=}\StringTok{"Ratings"}\NormalTok{ )}
+    \KeywordTok{boxplot}\NormalTok{(denzel}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\OperatorTok{$}\NormalTok{ratings, }\DataTypeTok{main=}\NormalTok{denzel}\OperatorTok{$}\NormalTok{name, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{), }\DataTypeTok{ylab=}\StringTok{"Ratings"}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{week_03_homework_files/figure-latex/boxplot summary of IMBD-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \CommentTok{#plot movie minutes}
+    \KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+    \KeywordTok{boxplot}\NormalTok{(will}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\OperatorTok{$}\NormalTok{minutes, }\DataTypeTok{main=}\NormalTok{will}\OperatorTok{$}\NormalTok{name, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{60}\NormalTok{,}\DecValTok{180}\NormalTok{), }\DataTypeTok{ylab=}\StringTok{"Minutes"}\NormalTok{ )}
+    \KeywordTok{boxplot}\NormalTok{(denzel}\OperatorTok{$}\NormalTok{movies}\FloatTok{.50}\OperatorTok{$}\NormalTok{minutes, }\DataTypeTok{main=}\NormalTok{denzel}\OperatorTok{$}\NormalTok{name, }\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{60}\NormalTok{,}\DecValTok{180}\NormalTok{), }\DataTypeTok{ylab=}\StringTok{"Minutes"}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{week_03_homework_files/figure-latex/boxplot summary of IMBD-2.pdf}
+
+
+
+
+\newpage
+\bibliographystyle{./../biblio/chicago}
+\bibliography{./../biblio/master} % this is master.bib located in the biblio subfolder ... you could have multiple files here if need be ... one is easier ...
+
+
+\end{document}
