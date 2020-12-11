@@ -56,7 +56,7 @@ You should place this file in your _SECRET_ local path for this course, in a sub
 
 ## Set your WSU id
 ```{r}
-wsu.id = "shawn-petersen"; # change this to yours.
+wsu.id = "shawn_petersen"; # change this to yours.
 ```
 
 ### Set your path to secret
@@ -102,8 +102,8 @@ my.audit = list();
 ```{r}
 # In your original XLS you should have prepared a 4th tab (that you did not upload), that contains your basic user id.  For me, my name was "MonteS"
 data.collector = "Shawn Petersen";
-#persons = c("Pete Gregory","Shawn Petersen", "Somloab Petersen", "Jessica White","Brian Kleven", "SKleven", "GKleven", "Matt Frey", "Jamie Frey", "Natalie Frey");
-persons = c("Shawn Petersen", "Pete Gregory", "Matt Frey", "Brian Kleven");# this should be the length of the subjects/participatnts
+#persons = c("Shawn Petersen", "Somloab Petersen", "Jessica White", "Pete Gregory", "Matt Frey", "Jamie Frey", "Natalie Frey", "Brian Kleven", "Brian Son", "Brian Daughter");
+persons = c("Shawn Petersen", "Pete Gregory", "Matt Frey", "Brian Kleven");
 
 ## you were supposed to make an MD5 hash of each (e.g., using md5.mshaffer.com or the humanVerse function)
 my.audit$fourth = list();
@@ -218,7 +218,7 @@ YES, they match. [no explanation required].
 ##### Explanation (5): entries per person
 
 ```{r}
-(my.audit$panel$entries.per.person == 28);
+(my.audit$panel$entries.per.person == 23);  #was 28
 ```
 
 Do the two objects above match?  If not, please explain.
